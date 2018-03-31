@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp">
+
+        <TextView
+            android:id="@+id/tv_num"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:text="#1"
+            android:textColor="@color/colorBlack"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/iv_music"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            android:layout_height="match_parent"
+            android:src="@drawable/album_music"
+            android:scaleType="centerInside"
+            android:layout_weight="2.3"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_judul_lagu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alien"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/tv_singer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:text="Sabrina Carpenter ft. Jonas Blue" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+
+</LinearLayout>
