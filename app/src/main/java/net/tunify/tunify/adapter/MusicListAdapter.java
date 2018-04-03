@@ -1,12 +1,18 @@
 package net.tunify.tunify.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import net.tunify.tunify.DetailActivity;
+import net.tunify.tunify.MainActivity;
 import net.tunify.tunify.R;
 import net.tunify.tunify.model.MusicList;
 
@@ -37,12 +43,21 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
 
     //Bind data from viewholder
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        MusicList musicList = musicLists.get(position);
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        final MusicList musicList = musicLists.get(position);
 
-        holder.tvJudulLagu.setText(musicList.getJudul_lagu());
+        holder.tvJudulLagu.setText(musicList.getTitle());
         holder.tvSinger.setText(musicList.getSinger());
         holder.tvNum.setText(musicList.getNum());
+        holder.mMusicCover.setImageResource(musicList.getCoverId());
+
+        holder.mItemMusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                DetailActivity.start(holder.itemView.getContext(), musicList);
+            }
+        });
 
     }
 
@@ -57,6 +72,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         public TextView tvJudulLagu;
         public TextView tvSinger;
         public TextView tvNum;
+        ImageView mMusicCover;
+        LinearLayout mItemMusic;
 
         //constructor
         public ViewHolder(View itemView) {
@@ -65,6 +82,8 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             tvJudulLagu = (TextView) itemView.findViewById(R.id.tv_judul_lagu);
             tvSinger    = (TextView) itemView.findViewById(R.id.tv_singer);
             tvNum       = (TextView) itemView.findViewById(R.id.tv_num);
+            mItemMusic = itemView.findViewById(R.id.lin_item_music);
+            mMusicCover = itemView.findViewById(R.id.iv_music);
         }
     }
 }

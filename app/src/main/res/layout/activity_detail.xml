@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.tunify.tunify.DetailActivity">
+    
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/col_music_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginEnd="64dp"
+            app:expandedTitleMarginStart="48dp"
+
+            app:layout_scrollFlags="exitUntilCollapsed|scroll"
+            app:title="Tunify">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:alpha="0.7"
+                android:src="@drawable/play" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+        
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="24dp">
+
+            <ImageView
+                android:id="@+id/img_cover"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/back"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/img_cover"
+                android:text="Hall Of Fame"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_singer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/img_cover"
+                android:layout_below="@id/tv_title"
+                android:text="Superheroes"
+                android:textSize="12sp"/>
+
+
+
+            <View
+                android:id="@+id/seperate1"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/img_cover"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#ccc" />
+
+            <RelativeLayout
+                android:id="@+id/rl_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seperate1"
+                android:layout_centerHorizontal="true">
+
+                <LinearLayout
+                    android:id="@+id/ll_album"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginRight="16dp">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:id="@+id/album"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:text="ALBUM"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <TextView
+                        android:id="@+id/tv_album"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Mantap bos"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_genre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ll_album"
+                    android:orientation="vertical"
+                    android:layout_marginRight="16dp">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:id="@+id/genre"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:text="GENRE"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <TextView
+                        android:id="@+id/tv_genre"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Pop"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_release"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/ll_genre"
+                    android:orientation="vertical"
+                    android:layout_marginRight="16dp">
+
+                    <TextView
+                        android:layout_margin="8dp"
+                        android:id="@+id/release"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:text="RELEASE"
+                        android:gravity="center"
+                        android:textColor="#fff"
+                        android:textStyle="bold"
+                        android:background="@drawable/circle"/>
+
+                    <TextView
+                        android:id="@+id/tv_release"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="2017"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/seperate2"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/rl_info"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#ccc" />
+
+            <TextView
+                android:id="@+id/music_fact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seperate2"
+                android:text="MUSIC FACT"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_music_fact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/music_fact"
+                android:textSize="16sp"
+                android:text="The first single from The Script's third album was recorded in Los Angeles and features will.i.am. Frontman Danny O'Donoghue decided to hook up with The Black Eye Pea after the pair worked together as coaches on The Voice UK. O'Donoghue explained to The Sun: I played Will a few demos backstage early on in The Voice. We got to 'Hall Of Fame' and he immediately asked if he could have it for his new album, as it was exactly what he was looking for. I wasn't having it, it was our lead single but I asked if he'd be on it. He agreed and we booked in time to record it. The problem is, he's either late or completely flakes, so it took four attempts to get him to record his part.The Irish singer added: Eventually we put it together in his hotel room in 15 minutes. It's a classic duet, I do one line and he responds. We're really excited about it and hoping we'll get out and do it live too."
+                android:maxLines="5"
+                android:ellipsize="end"
+                />
+
+            <Button
+                android:id="@+id/btn_fact_read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_music_fact"
+                android:layout_centerHorizontal="true"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:text="Read More"
+                android:textColor="@color/colorPrimary"/>
+
+            <View
+                android:id="@+id/seperate3"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/btn_fact_read_more"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#ccc" />
+
+            <TextView
+                android:id="@+id/music_lyric"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/seperate3"
+                android:text="Lyrics"
+                android:textAllCaps="true"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_marginBottom="24dp"
+                />
+
+            <TextView
+                android:id="@+id/tv_music_lyric"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/music_lyric"
+                android:textSize="16sp"
+                android:text="The first single from The Script's \n third album was recorded in Los Angeles and features will.i.am. Frontman Danny O'Donoghue decided to hook up with The Black Eye Pea after the pair worked together as coaches on The Voice UK. O'Donoghue explained to The Sun: I played Will a few demos backstage early on in The Voice. We got to 'Hall Of Fame' and he immediately asked if he could have it for his new album, as it was exactly what he was looking for. I wasn't having it, it was our lead single but I asked if he'd be on it. He agreed and we booked in time to record it. The problem is, he's either late or completely flakes, so it took four attempts to get him to record his part.The Irish singer added: Eventually we put it together in his hotel room in 15 minutes. It's a classic duet, I do one line and he responds. We're really excited about it and hoping we'll get out and do it live too."
+                android:maxLines="5"
+                android:ellipsize="end"
+                />
+
+            <Button
+                android:id="@+id/btn_lyrics_read_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_music_lyric"
+                android:layout_centerHorizontal="true"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:text="Read More"
+                android:textColor="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
