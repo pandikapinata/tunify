@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2.6"
-            android:text="#1"
+            android:text="1"
             android:textColor="@color/colorBlack"
             android:gravity="center"/>
 
@@ -57,9 +57,6 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray"/>
+
 
 </LinearLayout>

@@ -259,6 +259,7 @@
                 android:text="Read More"
                 android:textColor="@color/colorPrimary"/>
 
+
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
