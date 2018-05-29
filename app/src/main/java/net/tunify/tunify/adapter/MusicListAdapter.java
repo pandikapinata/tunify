@@ -50,6 +50,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         holder.tvSinger.setText(musicList.getSinger());
         holder.tvNum.setText(musicList.getNum());
         holder.mMusicCover.setImageResource(musicList.getCoverId());
+        holder.mChartSong.setImageResource(musicList.getChartId());
 
         holder.mItemMusic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +74,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
         public TextView tvSinger;
         public TextView tvNum;
         ImageView mMusicCover;
+        ImageView mChartSong;
         LinearLayout mItemMusic;
 
         //constructor
@@ -84,6 +86,7 @@ public class MusicListAdapter extends RecyclerView.Adapter<MusicListAdapter.View
             tvNum       = (TextView) itemView.findViewById(R.id.tv_num);
             mItemMusic = itemView.findViewById(R.id.lin_item_music);
             mMusicCover = itemView.findViewById(R.id.iv_music);
+            mChartSong = itemView.findViewById(R.id.iv_caret);
         }
     }
 }

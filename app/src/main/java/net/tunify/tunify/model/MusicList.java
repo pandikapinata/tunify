@@ -18,9 +18,10 @@ public class MusicList implements Parcelable{
     private String genre;
     private int coverId;
     private String youtubeId;
+    private int chartId;
 
 
-    public MusicList(String title, String singer, String num, String lyrics, String album, String fact, String release, String genre, int coverId, int musicVidId, String youtubeId) {
+    public MusicList(String title, String singer, String num, String lyrics, String album, String fact, String release, String genre, int coverId, int musicVidId, String youtubeId, int chartId) {
         this.title = title;
         this.singer = singer;
         this.num = num;
@@ -32,6 +33,7 @@ public class MusicList implements Parcelable{
         this.coverId = coverId;
         this.musicVidId = musicVidId;
         this.youtubeId = youtubeId;
+        this.chartId=chartId;
     }
 
     protected MusicList(Parcel in) {
@@ -44,6 +46,7 @@ public class MusicList implements Parcelable{
         release = in.readString();
         genre = in.readString();
         coverId = in.readInt();
+        chartId=in.readInt();
         youtubeId = in.readString();
         musicVidId = in.readInt();
     }
@@ -166,7 +169,16 @@ public class MusicList implements Parcelable{
         parcel.writeString(release);
         parcel.writeString(genre);
         parcel.writeInt(coverId);
+        parcel.writeInt(chartId);
         parcel.writeString(youtubeId);
         parcel.writeInt(musicVidId);
+    }
+
+    public int getChartId() {
+        return chartId;
+    }
+
+    public void setChartId(int chartId) {
+        this.chartId = chartId;
     }
 }

@@ -1,10 +1,13 @@
 package net.tunify.tunify;
 
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 
 import net.tunify.tunify.adapter.MusicListAdapter;
 import net.tunify.tunify.model.MusicList;
@@ -23,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        initCollapsingToolbar();
 
         mRecylerView = (RecyclerView) findViewById(R.id.rv_music);
         mRecylerView.setHasFixedSize(true);
@@ -120,7 +127,8 @@ public class MainActivity extends AppCompatActivity {
                 "Pop, EDM-Pop",
                 R.drawable._cover1,
                 R.drawable._thumbnails1,
-                "jzD_yyEcp0M"
+                "jzD_yyEcp0M",
+                R.drawable.arrow_up
 
         );
         musicLists.add(musicList);
@@ -205,7 +213,8 @@ public class MainActivity extends AppCompatActivity {
                 "Pop",
                 R.drawable._cover2,
                 R.drawable._thumbnails2,
-                "Mgfe5tIwOj0"
+                "Mgfe5tIwOj0",
+                R.drawable.arrow_down
 
         );
         musicLists.add(musicList);
@@ -286,7 +295,8 @@ public class MainActivity extends AppCompatActivity {
                 "Pop",
                 R.drawable._cover3,
                 R.drawable._thumbnails3,
-                "Lj6Y6JCu-l4"
+                "Lj6Y6JCu-l4",
+                R.drawable.arrow_up
 
         );
         musicLists.add(musicList);
@@ -382,7 +392,8 @@ public class MainActivity extends AppCompatActivity {
                 "Hip Hop",
                 R.drawable._cover4,
                 R.drawable._thumbnails4,
-                "kTlv5_Bs8aw"
+                "kTlv5_Bs8aw",
+                R.drawable.arrow_up
 
         );
         musicLists.add(musicList);
@@ -468,7 +479,8 @@ public class MainActivity extends AppCompatActivity {
                 "Latin, Pop",
                 R.drawable._cover5,
                 R.drawable._thumbnails5,
-                "BQ0mxQXmLsk"
+                "BQ0mxQXmLsk",
+                R.drawable.arrow_down
 
         );
         musicLists.add(musicList);
@@ -562,7 +574,9 @@ public class MainActivity extends AppCompatActivity {
                 "Pop",
                 R.drawable._cover6,
                 R.drawable._thumbnails6,
-                "2KNOQADH-7s"
+                "2KNOQADH-7s",
+                R.drawable.circle_stay
+
 
         );
         musicLists.add(musicList);
@@ -646,7 +660,8 @@ public class MainActivity extends AppCompatActivity {
                 "Pop",
                 R.drawable._cover7,
                 R.drawable._thumbnails7,
-                "k2qgadSvNyU"
+                "k2qgadSvNyU",
+                R.drawable.circle_stay
 
         );
         musicLists.add(musicList);
@@ -709,7 +724,8 @@ public class MainActivity extends AppCompatActivity {
                 "Country Pop",
                 R.drawable._cover8,
                 R.drawable._thumbnails8,
-                "zDo0H8Fm7d0"
+                "zDo0H8Fm7d0",
+                R.drawable.arrow_up
 
         );
         musicLists.add(musicList);
@@ -773,9 +789,10 @@ public class MainActivity extends AppCompatActivity {
                 "EDM",
                 R.drawable._cover9,
                 R.drawable._thumbnails9,
-                "grLLLTza6k"
-
+                "grLLLTza6k",
+                R.drawable.arrow_down
         );
+
         musicLists.add(musicList);
 
         musicList = new MusicList(
@@ -865,7 +882,8 @@ public class MainActivity extends AppCompatActivity {
                 "EDM",
                 R.drawable._cover10,
                 R.drawable._thumbnails10,
-                "pjTj-_55WZ8"
+                "pjTj-_55WZ8",
+                R.drawable.circle_stay
 
         );
         musicLists.add(musicList);
@@ -875,5 +893,34 @@ public class MainActivity extends AppCompatActivity {
         //divider between item
         mRecylerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         mRecylerView.setAdapter(mAdapter);
+    }
+
+    private void initCollapsingToolbar() {
+        final CollapsingToolbarLayout collapsingToolbar =
+                (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle(" ");
+        AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appbar);
+        appBarLayout.setExpanded(true);
+
+        // hiding & showing the title when toolbar expanded & collapsed
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = false;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbar.setTitle(getString(R.string.app_name));
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbar.setTitle(" ");
+                    isShow = false;
+                }
+            }
+        });
+
     }
 }

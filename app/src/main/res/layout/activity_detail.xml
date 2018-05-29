@@ -15,6 +15,7 @@
             android:id="@+id/col_music_video"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             android:background="@drawable/back"
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleMarginEnd="64dp"
