@@ -65,34 +65,34 @@ public class FragmentTopAlbum extends Fragment {
                 R.drawable.album9,
                 R.drawable.album10};
 
-        Album a = new Album("Robinson", 13, covers[0]);
+        Album a = new Album("Robinson", 13, covers[0], "Not Dark Yet");
         albumList.add(a);
 
-        a = new Album("The Chainsomker", 8, covers[1]);
+        a = new Album("The Chainsomker", 8, covers[1], "Wide Open");
         albumList.add(a);
 
-        a = new Album("Calumm Scott", 11, covers[2]);
+        a = new Album("Calumm Scott", 11, covers[2], "College");
         albumList.add(a);
 
-        a = new Album("The Weeknd", 12, covers[3]);
+        a = new Album("The Weeknd", 12, covers[3], "Roses");
         albumList.add(a);
 
-        a = new Album("Taylor Swift", 14, covers[4]);
+        a = new Album("Taylor Swift", 14, covers[4], "Bouquet");
         albumList.add(a);
 
-        a = new Album("Justin Bieber", 1, covers[5]);
+        a = new Album("Justin Bieber", 1, covers[5], "You Are The Reason");
         albumList.add(a);
 
-        a = new Album("David Guetta", 11, covers[6]);
+        a = new Album("David Guetta", 11, covers[6], "Hold on Tight");
         albumList.add(a);
 
-        a = new Album("Zedd", 14, covers[7]);
+        a = new Album("Zedd", 14, covers[7], "Im Not Superman");
         albumList.add(a);
 
-        a = new Album("Sabrina Carpenter", 11, covers[8]);
+        a = new Album("Sabrina Carpenter", 11, covers[8], "Marry Me!");
         albumList.add(a);
 
-        a = new Album("Marsmallow", 17, covers[9]);
+        a = new Album("Marsmallow", 17, covers[9], "Love What You do");
         albumList.add(a);
 
         adapter.notifyDataSetChanged();

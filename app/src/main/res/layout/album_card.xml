@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lin_album"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -36,6 +37,7 @@
                 android:paddingTop="@dimen/album_title_padding"
                 android:textColor="@color/album_title"
                 android:textSize="@dimen/album_title"
+                android:fontFamily="@font/titilliumweb_regular"
                 android:text="Marshmallow"/>
 
             <TextView
@@ -48,6 +50,7 @@
                 android:paddingRight="@dimen/album_title_padding"
                 android:textColor="@color/songs"
                 android:textSize="@dimen/songs_count"
+                android:fontFamily="@font/titilliumweb_regular"
                 android:text="3 Songs"/>
 
         </RelativeLayout>
