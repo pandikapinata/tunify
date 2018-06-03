@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/NoActionBar">
-        <activity android:name=".MainActivity2">
+        <activity android:name=".SplashScreen" android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,12 +17,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MainActivity2"
+            android:theme="@style/NoActionBar" />
+        <activity
             android:name=".DetailActivity"
             android:theme="@style/NoActionBar" />
         <activity
             android:name=".ReadMoreActivity"
             android:parentActivityName=".DetailActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+
+        </activity>
         <activity
             android:name=".AlbumDetail"
             android:parentActivityName=".MainActivity2"
